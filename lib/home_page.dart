@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_camera/take_photo_helper/button_take_photo.dart';
+import 'package:flutter_camera/take_photo_helper/take_photo_helper.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Center(
-              child: ButtonTakePhoto(
+              child: TakePhotoHelper(
                 onSelectedImage: (image) {
                   if(image != null) {
                     setState(() {

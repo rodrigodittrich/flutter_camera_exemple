@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_camera/camera_helper/button_take_photo.dart';
+import 'package:flutter_camera/take_photo_helper/button_take_photo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

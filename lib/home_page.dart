@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_camera/camera_helper/button_take_photo.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String? imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +22,16 @@ class HomePage extends StatelessWidget {
             Center(
               child: ButtonTakePhoto(
                 onSelectedImage: (image) {
-                  print("image: $image");
+                  if(image != null) {
+                    setState(() {
+                      imagePath = image.path;
+                    });
+                  }
                 },
               )
             ),
-          ],
+            if(imagePath != null) Image.network(imagePath!)
+          ],          
         ),
       ),
     );    

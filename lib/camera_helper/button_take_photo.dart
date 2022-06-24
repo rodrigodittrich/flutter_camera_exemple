@@ -17,6 +17,7 @@ class ButtonTakePhoto extends StatelessWidget {
         Navigator.of(context).push(MaterialPageRoute(builder: (_) => TakePhotoHelper(
           onSelectedImage: (image) {
             if(image != null) onSelectedImage(image);
+            Navigator.of(context).pop();
           },
         )));
       },      
